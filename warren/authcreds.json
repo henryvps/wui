@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "helpful-monitor-755",
+  "private_key_id": "22e077ff150b2400d54245065fc566d75b890b32",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFtWQAGeuPAXtv\n/+fuGx/bl+scSSRBrNztpGhWZub7qPZB6ISeJoYV6LtMnvXjGuzS8rjpiia41mrx\nfmmIoUJbOGzbUYDqHwqmVrgvEqfqKHAYT3kMUwvRAERAM+VRF8wXex+6k/T+k04d\nlB8SBopQMY2iujH2neb/ZaSD5ExUXGUqP2E6QhDgNOOWlKrZEY54PwGlEYeMYJZp\nVmcAAGHFGf79gRKDLN4vq7tAZmP3MoqYXef9+WztnioaVCiVftVJBGYobbXqpAGW\nmPMXFd8fpipaxThJXxomxz7Hldtw2VwmLz5ercGDtUlZIALQ9p16JTzwxVkMYGri\ntKZ8B6BnAgMBAAECggEABUZYIyqN3tReyzesI+2kVXMBqlEHPxtSD6MNx5RaQEeb\nPlnqQ9/qPuZlLN+m1sbOn7grF8wASXkrBENnpGYNA6sHOHi9tEFcwuBYbKUWRsiK\naROhuqLyk0JrD71ytk2ou82kpJEy/aHHeUGM7KmxAf+4dCl8kMRYt+Kp13z9TljW\ntVaLDX2bX4DnhiFGA68yV/WqT+wbscTMa/YKjZEZGjEZd/+TfGTHAt8HQzjISA8N\ncs12UVv6sXc5xtVd7UU4iwzP2MJZfN5VonHL34C/wfTZ4jdilxx/VjcYGPGORcNd\nAUthSQz8y4p4Wj4NGJZW9dILKd5GU0HdC2DV00rAEQKBgQDoXWuUijGel/u78AFv\ndTuwPyzY+BoPkCNJXJzTwW6m5SsFJBqP6MGlWlBLEfFjfIjw4syZq8lfmrBfVkq7\nm3+cT8OuUXSsRPRW66yfx/RPaev5/DBogQ5xot2Lm/P7VQToo2MrcRgnZ3b5+LMC\n9WL0+TPwlKvY12StIvzxz6r6lwKBgQDZ0YyDZ2vA9kP8PBczV/H5lDXqqF3LBLt6\nw+QISMvB3Cuj0XzXFj6B3vD6SKh3BbRJkgC1Df1i1g1O5Kpd4Ee5MLDPnwPWAV2a\nTU2kc0bbqs3CHKgqjtX5KB+IjytlqYk606IKz/goyK1OLJw9n3wBf40VB3ukJW+n\nmvxqf1RSsQKBgQDc2G13MCEY6rqHVQUIOhQQ3vpw/N1IDWZ8Q1mKqT3Rwd2xdS8J\nt97UmZHWx6b1N1ewGt767xrlktAuzIUa6h/PIMCK3UBWuvK/6h6XfiPllnaBkf8w\nU/i2aGTIW+D370ZLFX8butGKIfwieQ0qsq7qxi9naOYrogw9whNGgGmw4QKBgCPE\nv3hMoWs8hYmELKMny/qaFgiEwXI3Qro0NNwPaDZbe2cZXZDMfFNDUvsmt1NkQmja\navdQZs22LNVJw5hK3jxQ/Jf7mtunucE+9IMO0xH7iHJZ1lu2vPh/WD5KlGvLXVel\nrTRtVmkMGzl9JeMQr4Jnebl8UxdvdlhloRGz+xrhAoGATQWFkLJynIoLr+i65+El\nqnoYIDPSzpxEAqHH8Cq1+PD75/IUz7wbpZ/R2qrGLSvsVRRUSPvkM8JXIoqwZvOc\nyoTSXW4Ta5QTJuKRH9DqUKTgqePLMSPuGMrbHdwFRxVOfUxTNZ0qpMoXqpue+p+1\nWNEujV0Kk1+cZ7MvBdvFCBY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "jupyterlab@helpful-monitor-755.iam.gserviceaccount.com",
+  "client_id": "114961522964856758386",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jupyterlab%40helpful-monitor-755.iam.gserviceaccount.com"
+}
