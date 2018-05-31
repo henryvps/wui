@@ -1,0 +1,16 @@
+jupyterlab:
+  build: .
+  ports:
+    - "80:8888"
+  volumes:
+    - ./work:/home/jovyan/work
+    - ./labextensions:/home/jovyan/labextensions
+    - ./warren:/home/jovyan/warren
+  environment:
+    - JUPYTER_ENABLE_LAB=1
+faas:
+  build: ./warren/faas
+  ports:
+    - "7777:7777"
+  volumes:
+    - ./warren/faas:/home/jovyan
