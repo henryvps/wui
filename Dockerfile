@@ -20,6 +20,8 @@ RUN apt-get update && apt-get -yq dist-upgrade \
     sudo \
     locales \
     fonts-liberation \
+    gcc \
+    git \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -54,6 +56,7 @@ RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER && \
     fix-permissions $HOME && \
     fix-permissions $CONDA_DIR
 
+
 USER $NB_UID
 
 # Setup work directory for backward-compatibility
@@ -77,20 +80,35 @@ RUN cd /tmp && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
-# Install Jupyter Notebook and Hub
+# Install Jupyter Notebook and Hub etc
+RUN pip install --upgrade pip && pip install jupyterlab_templates
+
+
 RUN conda install --quiet --yes \
     'notebook=5.4.*' \
     'jupyterhub=0.8.*' \
     'jupyterlab=0.32.*' \
+    'ujson=1.35.*' \
     'docker-py' && \
     conda clean -tipsy && \
     jupyter labextension install @jupyterlab/hub-extension@^0.8.1 && \
+#    jupyter labextension install jupyterlab_templates && \
+    jupyter serverextension enable --py jupyterlab_templates && \
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     rm -rf /home/$NB_USER/.cache/yarn && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
+
+# own extensions go like this before the demo
+#git clone https://github.com/ipython/ipywidgets.git
+#cd ipywidgets/labextension
+#npm install
+#npm run build
+#pip install -e .
+#jupyter labextension install --sys-prefix --py jupyterlab_widgets
+#jupyter labextension enable --sys-prefix --py jupyterlab_widgets
 
 
 USER root
@@ -108,6 +126,7 @@ COPY start-notebook.sh /usr/local/bin/
 COPY start-singleuser.sh /usr/local/bin/
 COPY jupyter_notebook_config.py /etc/jupyter/
 RUN fix-permissions /etc/jupyter/
+RUN fix-permissions $HOME
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID

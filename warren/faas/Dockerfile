@@ -4,14 +4,26 @@
 FROM jupyter/scipy-notebook
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
+
 # Install Kernel Gateway
 RUN pip install jupyter-kernel-gateway docker
-ADD wrnaz wrnaz
-ADD faas.ipynb faas.ipynb
-ADD foo.ipynb foo.ipynb
+
+# add some files needed
+COPY wrnaz wrnaz
+COPY faas.ipynb faas.ipynb
+COPY foo.ipynb foo.ipynb
+RUN ls -la && pwd
+COPY fix-permissions /usr/local/bin/fix-permissions
+
+# fix permissions
+USER root
+RUN chmod a+x /usr/local/bin/fix-permissions && \
+    fix-permissions /home/jovyan/work
+RUN ls -la && pwd
+USER jovyan
+
 # Configure container startup
-#ENTRYPOINT ["jupyter-kernelgateway"]
 ENTRYPOINT ["tini", "--", "jupyter-kernelgateway", "--KernelGatewayApp.api=notebook-http", "--KernelGatewayApp.ip=0.0.0.0", "--KernelGatewayApp.port=7777"]
 CMD ["--KernelGatewayApp.seed_uri=./faas.ipynb"]
-## RUN pwd && ls -la
-## RUN jupyter-kernelgateway --KernelGatewayApp.api=notebook-http --KernelGatewayApp.ip=0.0.0.0 --KernelGatewayApp.port=7777 --NotebookHTTPPersonality.allow_notebook_download=True --KernelGatewayApp.seed_uri=./faas.ipynb
+
+
