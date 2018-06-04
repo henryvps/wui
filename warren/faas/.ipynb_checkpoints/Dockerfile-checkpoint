@@ -19,6 +19,6 @@ COPY wrnaz wrnaz
 #RUN pwd && ls -la faas
 # Configure container startup
 ENTRYPOINT ["tini", "--", "jupyter-kernelgateway", "--KernelGatewayApp.api=notebook-http", "--KernelGatewayApp.ip=0.0.0.0", "--KernelGatewayApp.port=7777"]
-CMD ["--KernelGatewayApp.seed_uri=./faas/faas.ipynb"]
+CMD ["--KernelGatewayApp.seed_uri=./warren/faas/faas.ipynb"]
 
 

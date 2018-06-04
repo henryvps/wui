@@ -81,7 +81,9 @@ RUN cd /tmp && \
     fix-permissions /home/$NB_USER
 
 # Install Jupyter Notebook and Hub etc
-RUN pip install --upgrade pip && pip install jupyterlab_templates
+RUN pip install --upgrade pip && \
+    pip install jupyterlab_templates && \
+    pip install dulwich --global-option="--pure"
 
 
 RUN conda install --quiet --yes \
@@ -89,6 +91,7 @@ RUN conda install --quiet --yes \
     'jupyterhub=0.8.*' \
     'jupyterlab=0.32.*' \
     'ujson=1.35.*' \
+    'dulwich' \
     'docker-py' && \
     conda clean -tipsy && \
     jupyter labextension install @jupyterlab/hub-extension@^0.8.1 && \

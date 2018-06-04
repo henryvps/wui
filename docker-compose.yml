@@ -12,3 +12,5 @@ faas:
   build: ./warren/faas
   ports:
     - "7777:7777"
+  volumes:
+    - ./warren/faas:/home/jovyan/faas
